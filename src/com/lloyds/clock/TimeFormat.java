@@ -1,6 +1,6 @@
 package com.lloyds.clock;
 
-public enum TimePattern {
+public enum TimeFormat {
 
 	HHMM, HHMMSS, HHMMSSmm;
 }
