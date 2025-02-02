@@ -2,8 +2,7 @@ package com.lloyds.clock;
 
 public class Constants {
 
-	// '\u00A0', '\u2007', '\u202F'
-	public final static char SPACE = '\u202F';
+	public final static char SPACE = '\u0020';
 	public final static String QUARTER = "Quarter";
 	public final static String HALF = "Half";
 	public final static String PAST = "past";
