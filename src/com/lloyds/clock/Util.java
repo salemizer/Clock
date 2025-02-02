@@ -8,12 +8,12 @@ public class Util {
 
 	}
 
-	public static String getLocalTimeString(TimePattern timePattern) {
+	public static String getLocalTimeString(TimeFormat timeFormat) {
 
 		StringBuilder time_sb = new StringBuilder();
 		LocalTime time = LocalTime.now();
 
-		if (timePattern == TimePattern.HHMM)
+		if (timeFormat == TimeFormat.HHMM)
 			time_sb.append(String.format("%02d", time.getHour())).append(":")
 					.append(String.format("%02d", time.getMinute()));
 
