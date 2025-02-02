@@ -5,11 +5,11 @@ import java.util.regex.Pattern;
 
 public class TimeValidator {
 
-	public static boolean isValidTime(String time_str, TimePattern timePattern) {
+	public static boolean isValidTime(String time_str, TimeFormat timeFormat) {
 
 		boolean output = false;
 
-		switch (timePattern) {
+		switch (timeFormat) {
 		case HHMM: {
 			output = validateHHMM(time_str);
 			break;
@@ -23,7 +23,7 @@ public class TimeValidator {
 			break;
 		}
 		default:
-            throw new UnsupportedOperationException("Unsupported time pattern");
+            throw new UnsupportedOperationException("Unsupported time format!!");
 		}
 		return output;
 	}
