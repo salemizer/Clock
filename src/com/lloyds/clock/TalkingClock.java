@@ -2,15 +2,15 @@ package com.lloyds.clock;
 
 public class TalkingClock implements Clock {
 
-	private final TimePattern timePattern;
+	private final TimeFormat inputTimeFormat;
 
 	public TalkingClock() {
 		// default pattern
-		this(TimePattern.HHMM);
+		this(TimeFormat.HHMM);
 	}
 
-	public TalkingClock(TimePattern timePattern) {
-		this.timePattern = timePattern;
+	public TalkingClock(TimeFormat inputTimeFormat) {
+		this.inputTimeFormat = inputTimeFormat;
 	}
 
 	public String sayTime(String time) {
@@ -18,9 +18,9 @@ public class TalkingClock implements Clock {
 		StringBuilder time_sb = new StringBuilder();
 
 		if (time == null || time.equals(""))
-			time = Util.getLocalTimeString(timePattern);
+			time = Util.getLocalTimeString(inputTimeFormat);
 
-		if (!TimeValidator.isValidTime(time, timePattern))
+		if (!TimeValidator.isValidTime(time, inputTimeFormat))
 			return Constants.GENERIC_VALIDATION_ERROR;
 
 		int hours = Integer.parseInt(time.substring(0, time.indexOf(":")));
